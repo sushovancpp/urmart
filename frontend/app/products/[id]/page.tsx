@@ -1,12 +1,13 @@
 "use client";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { Star, Heart, ShoppingCart, ChevronRight, Plus, Minus } from "lucide-react";
 import { api, Product, Review } from "@/lib/api";
 import { useApp } from "@/lib/context";
 
-export default function ProductDetailPage({ params }: { params: { id: string } }) {
+export default function ProductDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
   const { user, addToCart } = useApp();
   const router = useRouter();
   const [product, setProduct] = useState<Product | null>(null);
@@ -19,11 +20,11 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
   const [reviewMsg, setReviewMsg] = useState("");
 
   useEffect(() => {
-    api.products.get(params.id)
+    api.products.get(id)
       .then((r: unknown) => { const res = r as { data: Product }; setProduct(res.data); })
       .catch(() => router.push("/products"))
       .finally(() => setLoading(false));
-  }, [params.id, router]);
+  }, [id, router]);
 
   useEffect(() => {
     if (user && product) {
