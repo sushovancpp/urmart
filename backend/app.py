@@ -965,8 +965,9 @@ def serve_frontend(path):
     return send_from_directory(FRONTEND, "index.html")
 
 # ─── Boot ─────────────────────────────────────────────────────────────────────
+init_db()
+
 if __name__ == "__main__":
-    init_db()
     print("\n" + "═"*50)
     print("  UR MART Backend — Flask + SQLite")
     print("  http://localhost:3000")
