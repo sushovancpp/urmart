@@ -271,8 +271,3 @@ NEXT_PUBLIC_API_URL=http://localhost:5000
 - The Next.js proxy in `next.config.mjs` is for local dev. In production, point `NEXT_PUBLIC_API_URL` directly at your Flask server or use a reverse proxy (nginx).
 - SQLite is fine for small/medium loads. For higher traffic, swap the db layer for PostgreSQL.
 
----
-
-## 📄 License
-
-MIT
