@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".", // ✅ REQUIRED
+    "baseUrl": ".", 
     "lib": [
       "dom",
       "dom.iterable",
