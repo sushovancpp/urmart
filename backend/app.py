@@ -968,4 +968,4 @@ if __name__ == "__main__":
     print("  http://localhost:3000")
     print("  Admin: admin@urmart.com / admin123")
     print("═"*50 + "\n")
-    app.run(debug=True, port=3000, host="0.0.0.0")
+    app.run(debug=True, port=5000, host="0.0.0.0")
