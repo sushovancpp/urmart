@@ -19,7 +19,7 @@ def main():
     print("   ╚═════╝ ╚═╝  ╚═╝    ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ")
     print("═"*56)
     print("  Tech Stack: Flask + SQLite + JWT + React 18")
-    print("  URL:        http://localhost:5000")
+    print("  URL:        http://localhost:3000")
     print("  Admin:      admin@urmart.com / admin123")
     print("  Coupons:    WELCOME10 · SAVE50 · FRESH20")
     print("═"*56 + "\n")
@@ -33,7 +33,7 @@ def main():
             cwd=backend_dir,
         )
         time.sleep(1.5)
-        webbrowser.open("http://localhost:5000")
+        webbrowser.open("http://localhost:3000")
         proc.wait()
     except KeyboardInterrupt:
         print("\n[*] Shutting down UR MART...")
